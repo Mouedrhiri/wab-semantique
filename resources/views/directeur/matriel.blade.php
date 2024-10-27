@@ -24,25 +24,15 @@
         <div class="sidebar-brand-text mx-3">Civil Entreprise</div>
       </a>
       <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/directeur-dashboard">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
         Options
       </div>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
-          aria-expanded="true" aria-controls="collapseBootstrap">
-          <i class="far fa-user"></i>
-          <span>Utilisateurs</span>
-        </a>
-        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Utilisateurs</h6>
-            <a class="collapse-item" href="/client">Clients</a>
-            <a class="collapse-item" href="/employeur">Employees</a>
-            <a class="collapse-item" href="/users">Admin</a>
-          </div>
-        </div>
-      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
           aria-controls="collapseForm">
@@ -52,15 +42,27 @@
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Projets et Demandes</h6>
-            <a class="collapse-item" href="/projet">Projets</a>
-            <a class="collapse-item" href="/demande_de_projet">Demandes des Projets</a>
+            <a class="collapse-item" href="/direction-projet">Projets</a>
+            <a class="collapse-item" href="/direction-demande_de_projet">Demandes des Projets</a>
           </div>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/facture">
+        <a class="nav-link" href="/direction-facture">
           <i class="fas fa-file-invoice"></i>
           <span>Factures</span>
+        </a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/direction-tache">
+         <i class="fa fa-tasks"></i>
+          <span>Tâches</span>
+        </a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/direction-matriel">
+          <i class="fa fa-industry"></i>
+          <span>Materiels</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -71,12 +73,6 @@
         <a class="nav-link" href="/notifications">
           <i class="fa fa-bell"></i>
           <span>Notifications</span>
-        </a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fa fa-back"></i>
-          <span>Deconnexion</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -119,7 +115,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqzimYL8cryUexi41Y0o2AIXlbtmOvOB4bgA&s" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Nasma OUARDI</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">Direction</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -139,20 +135,23 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Client Listes</h1>
+            <h1 class="h3 mb-0 text-gray-800">Matriels Listes</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item">Clients</li>
-              <li class="breadcrumb-item active" aria-current="page">Clients Listes</li>
+              <li class="breadcrumb-item">Matriels</li>
+              <li class="breadcrumb-item active" aria-current="page">Matriels Listes</li>
             </ol>
           </div>
 
           <div class="row">
-            <div class="col-lg-12 mb-4">
+          <!-- Employee Table -->
+<!-- Materials Table -->
+<div class="col-lg-12 mb-4">
+  <!-- Simple Tables -->
   <div class="card">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-      <h6 class="m-0 font-weight-bold text-primary">Client List</h6>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#addClientModal">Add Client</button>
+      <h6 class="m-0 font-weight-bold text-primary">Materials Table</h6>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#addMaterialModal">Add Material</button>
     </div>
     <div class="table-responsive">
       <table class="table align-items-center table-flush">
@@ -160,112 +159,127 @@
           <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Address</th>
-            <th>Actions</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Supplier</th>
+            <th>Image</th>
+            <th>Action</th>
           </tr>
         </thead>
-        <tbody id="clientTableBody">
-          <!-- Dynamic content will be inserted here -->
+        <tbody id="materialTableBody">
+          <!-- Material rows will be inserted here by JavaScript -->
         </tbody>
       </table>
     </div>
   </div>
 </div>
 
-<!-- Add Client Modal -->
-<div class="modal fade" id="addClientModal" tabindex="-1" role="dialog" aria-labelledby="addClientModalLabel" aria-hidden="true">
+</div>
+
+<!-- Add Material Modal -->
+<div class="modal fade" id="addMaterialModal" tabindex="-1" role="dialog" aria-labelledby="addMaterialModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addClientModalLabel">Add New Client</h5>
+        <h5 class="modal-title" id="addMaterialModalLabel">Add New Material</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form id="addClientForm">
+        <form id="addMaterialForm">
           <div class="form-group">
-            <label for="clientName">Name</label>
-            <input type="text" class="form-control" id="clientName" name="name" required>
+            <label for="materialName">Name</label>
+            <input type="text" class="form-control" id="materialName" name="name" required>
           </div>
           <div class="form-group">
-            <label for="clientEmail">Email</label>
-            <input type="email" class="form-control" id="clientEmail" name="email" required>
+            <label for="materialQuantity">Quantity</label>
+            <input type="number" class="form-control" id="materialQuantity" name="quantity">
           </div>
           <div class="form-group">
-            <label for="clientPhone">Phone</label>
-            <input type="text" class="form-control" id="clientPhone" name="phone">
+            <label for="materialUnitPrice">Unit Price</label>
+            <input type="number" class="form-control" id="materialUnitPrice" name="unit_price" step="0.01">
           </div>
           <div class="form-group">
-            <label for="clientAddress">Address</label>
-            <input type="text" class="form-control" id="clientAddress" name="address">
+            <label for="materialSupplier">Supplier</label>
+            <input type="text" class="form-control" id="materialSupplier" name="supplier">
           </div>
-          <button type="submit" class="btn btn-primary">Add Client</button>
+          <div class="form-group">
+            <label for="materialImage">Image URL</label>
+            <input type="text" class="form-control" id="materialImage" name="image">
+          </div>
+          <button type="submit" class="btn btn-primary">Add Material</button>
         </form>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Update Client Modal -->
-<div class="modal fade" id="updateClientModal" tabindex="-1" role="dialog" aria-labelledby="updateClientModalLabel" aria-hidden="true">
+
+<!-- Update Material Modal -->
+<div class="modal fade" id="updateMaterialModal" tabindex="-1" role="dialog" aria-labelledby="updateMaterialModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="updateClientModalLabel">Update Client</h5>
+        <h5 class="modal-title" id="updateMaterialModalLabel">Update Material</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form id="updateClientForm">
-          <input type="hidden" id="updateClientId" name="id">
+        <form id="updateMaterialForm">
+          <input type="hidden" id="updateMaterialId" name="id">
           <div class="form-group">
-            <label for="updateClientName">Name</label>
-            <input type="text" class="form-control" id="updateClientName" name="name" required>
+            <label for="updateMaterialName">Name</label>
+            <input type="text" class="form-control" id="updateMaterialName" name="name" required>
           </div>
           <div class="form-group">
-            <label for="updateClientEmail">Email</label>
-            <input type="email" class="form-control" id="updateClientEmail" name="email" required>
+            <label for="updateMaterialQuantity">Quantity</label>
+            <input type="number" class="form-control" id="updateMaterialQuantity" name="quantity">
           </div>
           <div class="form-group">
-            <label for="updateClientPhone">Phone</label>
-            <input type="text" class="form-control" id="updateClientPhone" name="phone">
+            <label for="updateMaterialUnitPrice">Unit Price</label>
+            <input type="number" class="form-control" id="updateMaterialUnitPrice" name="unit_price" step="0.01">
           </div>
           <div class="form-group">
-            <label for="updateClientAddress">Address</label>
-            <input type="text" class="form-control" id="updateClientAddress" name="address">
+            <label for="updateMaterialSupplier">Supplier</label>
+            <input type="text" class="form-control" id="updateMaterialSupplier" name="supplier">
           </div>
-          <button type="submit" class="btn btn-primary">Update Client</button>
+          <div class="form-group">
+            <label for="updateMaterialImage">Image URL</label>
+            <input type="text" class="form-control" id="updateMaterialImage" name="image">
+          </div>
+          <button type="submit" class="btn btn-primary">Update Material</button>
         </form>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Delete Client Modal -->
-<div class="modal fade" id="deleteClientModal" tabindex="-1" role="dialog" aria-labelledby="deleteClientModalLabel" aria-hidden="true">
+
+<!-- Delete Material Modal -->
+<div class="modal fade" id="deleteMaterialModal" tabindex="-1" role="dialog" aria-labelledby="deleteMaterialModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="deleteClientModalLabel">Delete Client</h5>
+        <h5 class="modal-title" id="deleteMaterialModalLabel">Delete Material</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Are you sure you want to delete this client?</p>
-        <form id="deleteClientForm">
-          <input type="hidden" id="deleteClientId" name="id">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <p>Are you sure you want to delete this material?</p>
+        <form id="deleteMaterialForm">
+          <input type="hidden" id="deleteMaterialId" name="id">
           <button type="submit" class="btn btn-danger">Delete</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+
+
     </div>
           <!--Row-->
 
@@ -295,15 +309,6 @@
         <!---Container Fluid-->
       </div>
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
-              <b><a href="https://indrijunanda.gitlab.io/" target="_blank">indrijunanda</a></b>
-            </span>
-          </div>
-        </div>
-      </footer>
       <!-- Footer -->
     </div>
   </div>
@@ -313,106 +318,112 @@
     <i class="fas fa-angle-up"></i>
   </a>
   <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    function loadClients() {
-      fetch('http://localhost:3000/api/clients')
-        .then(response => response.json())
-        .then(clients => {
-          const tableBody = document.getElementById('clientTableBody');
-          tableBody.innerHTML = '';
-          clients.forEach(client => {
-            const row = `
-              <tr>
-                <td>${client.id}</td>
-                <td>${client.name}</td>
-                <td>${client.email}</td>
-                <td>${client.phone}</td>
-                <td>${client.address}</td>
-                <td>
-                  <button class="btn btn-sm btn-warning" onclick="openUpdateClientModal(${client.id}, '${client.name}', '${client.email}', '${client.phone}', '${client.address}')">Update</button>
-                  <button class="btn btn-sm btn-danger" onclick="openDeleteClientModal(${client.id})">Delete</button>
-                </td>
-              </tr>
-            `;
-            tableBody.innerHTML += row;
-          });
-        });
-    }
+ document.addEventListener('DOMContentLoaded', function() {
+  loadMaterials();
 
-    loadClients();
-
-    document.getElementById('addClientForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const formData = new FormData(this);
-      fetch('http://localhost:3000/api/clients', {
-        method: 'POST',
-        body: JSON.stringify(Object.fromEntries(formData)),
-        headers: { 'Content-Type': 'application/json' }
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.error) {
-          alert('Error: ' + data.error);
-        } else {
-          alert('Client added successfully!');
-          window.location.reload();
-        }
-      })
-      .catch(error => console.error('Error:', error));
-    });
-
-    document.getElementById('updateClientForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const formData = new FormData(this);
-      fetch(`http://localhost:3000/api/clients/${document.getElementById('updateClientId').value}`, {
-        method: 'PUT',
-        body: JSON.stringify(Object.fromEntries(formData)),
-        headers: { 'Content-Type': 'application/json' }
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.error) {
-          alert('Error: ' + data.error);
-        } else {
-          alert('Client updated successfully!');
-          window.location.reload();
-        }
-      })
-      .catch(error => console.error('Error:', error));
-    });
-
-    document.getElementById('deleteClientForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const clientId = document.getElementById('deleteClientId').value;
-      fetch(`http://localhost:3000/api/clients/${clientId}`, {
-        method: 'DELETE'
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.error) {
-          alert('Error: ' + data.error);
-        } else {
-          alert('Client deleted successfully!');
-          window.location.reload();
-        }
-      })
-      .catch(error => console.error('Error:', error));
-    });
+  document.getElementById('addMaterialForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    fetch('http://localhost:3000/api/materials', {
+      method: 'POST',
+      body: JSON.stringify(Object.fromEntries(formData)),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        alert('Error: ' + data.error);
+      } else {
+        alert('Material added successfully!');
+        $('#addMaterialModal').modal('hide');
+        loadMaterials();
+      }
+    })
+    .catch(error => console.error('Error:', error));
   });
 
-  function openUpdateClientModal(id, name, email, phone, address) {
-    document.getElementById('updateClientId').value = id;
-    document.getElementById('updateClientName').value = name;
-    document.getElementById('updateClientEmail').value = email;
-    document.getElementById('updateClientPhone').value = phone;
-    document.getElementById('updateClientAddress').value = address;
-    $('#updateClientModal').modal('show');
-  }
+  document.getElementById('updateMaterialForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    fetch(`http://localhost:3000/api/materials/${document.getElementById('updateMaterialId').value}`, {
+      method: 'PUT',
+      body: JSON.stringify(Object.fromEntries(formData)),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        alert('Error: ' + data.error);
+      } else {
+        alert('Material updated successfully!');
+        $('#updateMaterialModal').modal('hide');
+        loadMaterials();
+      }
+    })
+    .catch(error => console.error('Error:', error));
+  });
 
-  function openDeleteClientModal(id) {
-    document.getElementById('deleteClientId').value = id;
-    $('#deleteClientModal').modal('show');
-  }
+  document.getElementById('deleteMaterialForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const materialId = document.getElementById('deleteMaterialId').value;
+    fetch(`http://localhost:3000/api/materials/${materialId}`, {
+      method: 'DELETE'
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        alert('Error: ' + data.error);
+      } else {
+        alert('Material deleted successfully!');
+        $('#deleteMaterialModal').modal('hide');
+        loadMaterials();
+      }
+    })
+    .catch(error => console.error('Error:', error));
+  });
+});
+
+function loadMaterials() {
+  fetch('http://localhost:3000/api/materials')
+    .then(response => response.json())
+    .then(materials => {
+      const tableBody = document.getElementById('materialTableBody');
+      tableBody.innerHTML = '';
+      materials.forEach(material => {
+        tableBody.innerHTML += `
+          <tr>
+            <td>${material.id}</td>
+            <td>${material.name}</td>
+            <td>${material.quantity}</td>
+            <td>${material.unit_price}</td>
+            <td>${material.supplier}</td>
+            <td><img src="${material.image}" alt="${material.name}" style="width: 50px; height: auto;"></td>
+            <td>
+              <button class="btn btn-sm btn-warning" onclick="openUpdateMaterialModal(${material.id}, '${material.name}', '${material.quantity}', '${material.unit_price}', '${material.supplier}', '${material.image}')">Update</button>
+              <button class="btn btn-sm btn-danger" onclick="openDeleteMaterialModal(${material.id})">Delete</button>
+            </td>
+          </tr>
+        `;
+      });
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function openUpdateMaterialModal(id, name, quantity, unit_price, supplier, image) {
+  document.getElementById('updateMaterialId').value = id;
+  document.getElementById('updateMaterialName').value = name;
+  document.getElementById('updateMaterialQuantity').value = quantity;
+  document.getElementById('updateMaterialUnitPrice').value = unit_price;
+  document.getElementById('updateMaterialSupplier').value = supplier;
+  document.getElementById('updateMaterialImage').value = image;
+  $('#updateMaterialModal').modal('show');
+}
+
+function openDeleteMaterialModal(id) {
+  document.getElementById('deleteMaterialId').value = id;
+  $('#deleteMaterialModal').modal('show');
+}
+
 </script>
 
   <script src="vendor/jquery/jquery.min.js"></script>

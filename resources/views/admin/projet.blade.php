@@ -42,11 +42,6 @@
         <div class="sidebar-brand-text mx-3">Civil Entreprise</div>
       </a>
       <hr class="sidebar-divider my-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="/dashboard">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
         Options
@@ -84,18 +79,6 @@
         <a class="nav-link" href="/facture">
           <i class="fas fa-file-invoice"></i>
           <span>Factures</span>
-        </a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="/tache">
-         <i class="fa fa-tasks"></i>
-          <span>Tâches</span>
-        </a>
-      </li>
-        <li class="nav-item">
-        <a class="nav-link" href="/matriel">
-          <i class="fa fa-industry"></i>
-          <span>Materiels</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -248,8 +231,6 @@
   <label for="projectStatus">Status</label>
   <select class="form-control" id="projectStatus" name="status" required>
     <option value="In Progress">In Progress</option>
-    <option value="Completed">Completed</option>
-    <option value="Incompleted">Incompleted</option>
   </select>
 </div>
           <button type="submit" class="btn btn-primary">Add Project</button>
@@ -259,78 +240,7 @@
   </div>
 </div>
 
-<!-- Update Project Modal -->
-<div class="modal fade" id="updateProjectModal" tabindex="-1" role="dialog" aria-labelledby="updateProjectModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="updateProjectModalLabel">Update Project</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="updateProjectForm">
-          <input type="hidden" id="updateProjectId" name="id">
-          <div class="form-group">
-            <label for="updateProjectClient">Client</label>
-            <select class="form-control" id="updateProjectClient" name="client_id" required>
-              <!-- Client options will be populated here -->
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="updateProjectName">Project Name</label>
-            <input type="text" class="form-control" id="updateProjectName" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="updateProjectDescription">Description</label>
-            <input type="text" class="form-control" id="updateProjectDescription" name="description">
-          </div>
-          <div class="form-group">
-            <label for="updateProjectStartDate">Start Date</label>
-            <input type="date" class="form-control" id="updateProjectStartDate" name="start_date">
-          </div>
-          <div class="form-group">
-            <label for="updateProjectEndDate">End Date</label>
-            <input type="date" class="form-control" id="updateProjectEndDate" name="end_date">
-          </div>
-         <div class="form-group">
-  <label for="updateProjectStatus">Status</label>
-  <select class="form-control" id="updateProjectStatus" name="status" required>
-    <option value="In Progress">In Progress</option>
-    <option value="Completed">Completed</option>
-    <option value="Incompleted">Incompleted</option>
-  </select>
-</div>
-          <button type="submit" class="btn btn-primary">Update Project</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Delete Project Modal -->
-<div class="modal fade" id="deleteProjectModal" tabindex="-1" role="dialog" aria-labelledby="deleteProjectModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="deleteProjectModalLabel">Delete Project</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Are you sure you want to delete this project?</p>
-        <form id="deleteProjectForm">
-          <input type="hidden" id="deleteProjectId" name="id">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 
 <!-- Add Client Modal -->
 <div class="modal fade" id="addClientModal" tabindex="-1" role="dialog" aria-labelledby="addClientModalLabel" aria-hidden="true">

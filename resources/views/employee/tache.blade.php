@@ -74,12 +74,6 @@
           <span>Tâches</span>
         </a>
       </li>
-        <li class="nav-item">
-        <a class="nav-link" href="/matriel">
-          <i class="fa fa-industry"></i>
-          <span>Materiels</span>
-        </a>
-      </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
         Notifications
@@ -227,7 +221,6 @@
             <select class="form-control" id="status" name="status" required>
               <option value="Not Started">Not Started</option>
               <option value="In Progress">In Progress</option>
-              <option value="Completed">Completed</option>
             </select>
           </div>
           <div class="form-group">
@@ -275,7 +268,6 @@
             <select class="form-control" id="updateTaskStatus" name="status">
               <option value="Not Started">Not Started</option>
               <option value="In Progress">In Progress</option>
-              <option value="Completed">Completed</option>
             </select>
           </div>
           <div class="form-group">
@@ -283,29 +275,6 @@
             <input type="date" class="form-control" id="updateTaskDueDate" name="due_date">
           </div>
           <button type="submit" class="btn btn-primary">Update Task</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Delete Task Modal -->
-<div class="modal fade" id="deleteTaskModal" tabindex="-1" role="dialog" aria-labelledby="deleteTaskModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="deleteTaskModalLabel">Delete Task</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Are you sure you want to delete this task?</p>
-        <form id="deleteTaskForm">
-          <input type="hidden" id="deleteTaskId" name="id">
-          <button type="submit" class="btn btn-danger">Delete</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </form>
       </div>
     </div>
@@ -414,7 +383,6 @@ function loadTasks() {
             <td>${task.due_date}</td>
             <td>
               <button class="btn btn-sm btn-warning" onclick="openUpdateTaskModal(${task.id}, '${task.project_id}', '${task.description}', '${task.assigned_to}', '${task.status}', '${task.due_date}')">Update</button>
-              <button class="btn btn-sm btn-danger" onclick="openDeleteTaskModal(${task.id})">Delete</button>
             </td>
           </tr>
         `;

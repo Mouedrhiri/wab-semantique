@@ -17,32 +17,22 @@
 <body id="page-top">
   <div id="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+   <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
         </div>
         <div class="sidebar-brand-text mx-3">Civil Entreprise</div>
       </a>
       <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/direction-dashboard">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
         Options
       </div>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
-          aria-expanded="true" aria-controls="collapseBootstrap">
-          <i class="far fa-user"></i>
-          <span>Utilisateurs</span>
-        </a>
-        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Utilisateurs</h6>
-            <a class="collapse-item" href="/client">Clients</a>
-            <a class="collapse-item" href="/employeur">Employees</a>
-            <a class="collapse-item" href="/users">Admin</a>
-          </div>
-        </div>
-      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
           aria-controls="collapseForm">
@@ -52,15 +42,27 @@
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Projets et Demandes</h6>
-            <a class="collapse-item" href="/projet">Projets</a>
-            <a class="collapse-item" href="/demande_de_projet">Demandes des Projets</a>
+            <a class="collapse-item" href="/direction-projet">Projets</a>
+            <a class="collapse-item" href="/direction-demande_de_projet">Demandes des Projets</a>
           </div>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/facture">
+        <a class="nav-link" href="/direction-facture">
           <i class="fas fa-file-invoice"></i>
           <span>Factures</span>
+        </a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/direction-tache">
+         <i class="fa fa-tasks"></i>
+          <span>Tâches</span>
+        </a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/direction-matriel">
+          <i class="fa fa-industry"></i>
+          <span>Materiels</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -68,15 +70,9 @@
         Notifications
       </div>
       <li class="nav-item">
-        <a class="nav-link" href="/notifications">
+        <a class="nav-link" href="/direction-notifications">
           <i class="fa fa-bell"></i>
           <span>Notifications</span>
-        </a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fa fa-back"></i>
-          <span>Deconnexion</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -86,7 +82,7 @@
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <!-- TopBar -->
-         <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
           <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
@@ -119,7 +115,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqzimYL8cryUexi41Y0o2AIXlbtmOvOB4bgA&s" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Nasma OUARDI</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">Direction</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -139,74 +135,73 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Employees Listes</h1>
+            <h1 class="h3 mb-0 text-gray-800">Listes des Taches</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item">Employees</li>
-              <li class="breadcrumb-item active" aria-current="page">Employess Listes</li>
+              <li class="breadcrumb-item">Taches</li>
+              <li class="breadcrumb-item active" aria-current="page">Liste des Taches</li>
             </ol>
           </div>
 
           <div class="row">
           <!-- Employee Table -->
+<!-- Materials Table -->
+<!-- Tasks Table -->
 <div class="col-lg-12 mb-4">
   <!-- Simple Tables -->
   <div class="card">
-    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-      <h6 class="m-0 font-weight-bold text-primary">Employee Table</h6>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#addEmployeeModal">Add Employee</button>
-    </div>
     <div class="table-responsive">
       <table class="table align-items-center table-flush">
         <thead class="thead-light">
           <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Salary</th>
-            <th>Hire Date</th>
+            <th>Project</th>
+            <th>Description</th>
+            <th>Assigned To</th>
+            <th>Status</th>
+            <th>Due Date</th>
             <th>Action</th>
           </tr>
         </thead>
-        <tbody id="employeeTableBody">
-          <!-- Employee rows will be inserted here by JavaScript -->
+        <tbody id="taskTableBody">
+          <!-- Task rows will be inserted here by JavaScript -->
         </tbody>
       </table>
     </div>
   </div>
 </div>
+
 </div>
 
-<!-- Add Client Modal -->
-<!-- Add Employee Modal -->
-<div class="modal fade" id="addEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
+<!-- Add Task Modal -->
+<div class="modal fade" id="addTaskModal" tabindex="-1" role="dialog" aria-labelledby="addTaskModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addEmployeeModalLabel">Add New Employee</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
       <div class="modal-body">
-        <form id="addEmployeeForm">
+        <form id="addTaskForm">
           <div class="form-group">
-            <label for="employeeName">Name</label>
-            <input type="text" class="form-control" id="employeeName" name="name" required>
+            <label for="project_id">Project</label>
+            <select class="form-control" id="project_id" name="project_id" required></select>
           </div>
           <div class="form-group">
-            <label for="employeePosition">Position</label>
-            <input type="text" class="form-control" id="employeePosition" name="position">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" name="description" required>
           </div>
           <div class="form-group">
-            <label for="employeeSalary">Salary</label>
-            <input type="number" class="form-control" id="employeeSalary" name="salary">
+            <label for="assigned_to">Assigned To</label>
+            <select class="form-control" id="assigned_to" name="assigned_to" required></select>
           </div>
           <div class="form-group">
-            <label for="employeeHireDate">Hire Date</label>
-            <input type="date" class="form-control" id="employeeHireDate" name="hire_date">
+            <label for="status">Status</label>
+            <select class="form-control" id="status" name="status" required>
+              <option value="Not Started">Not Started</option>
+              <option value="In Progress">Started</option>
+            </select>
           </div>
-          <button type="submit" class="btn btn-primary">Add Employee</button>
+          <div class="form-group">
+            <label for="due_date">Due Date</label>
+            <input type="date" class="form-control" id="due_date" name="due_date" required>
+          </div>
         </form>
       </div>
     </div>
@@ -214,36 +209,47 @@
 </div>
 
 
-<!-- Update Employee Modal -->
-<div class="modal fade" id="updateEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="updateEmployeeModalLabel" aria-hidden="true">
+
+<!-- Update Task Modal -->
+<div class="modal fade" id="updateTaskModal" tabindex="-1" role="dialog" aria-labelledby="updateTaskModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="updateEmployeeModalLabel">Update Employee</h5>
+        <h5 class="modal-title" id="updateTaskModalLabel">Update Task</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form id="updateEmployeeForm">
-          <input type="hidden" id="updateEmployeeId" name="id">
+        <form id="updateTaskForm">
+          <input type="hidden" id="updateTaskId" name="id">
           <div class="form-group">
-            <label for="updateEmployeeName">Name</label>
-            <input type="text" class="form-control" id="updateEmployeeName" name="name" required>
+            <label for="updateTaskProject">Project</label>
+            <select class="form-control" id="updateTaskProject" name="project_id">
+              <!-- Options will be filled by JavaScript -->
+            </select>
           </div>
           <div class="form-group">
-            <label for="updateEmployeePosition">Position</label>
-            <input type="text" class="form-control" id="updateEmployeePosition" name="position">
+            <label for="updateTaskDescription">Description</label>
+            <input type="text" class="form-control" id="updateTaskDescription" name="description" required>
           </div>
           <div class="form-group">
-            <label for="updateEmployeeSalary">Salary</label>
-            <input type="number" class="form-control" id="updateEmployeeSalary" name="salary">
+            <label for="updateTaskAssignedTo">Assigned To</label>
+            <input type="text" class="form-control" id="updateTaskAssignedTo" name="assigned_to">
           </div>
           <div class="form-group">
-            <label for="updateEmployeeHireDate">Hire Date</label>
-            <input type="date" class="form-control" id="updateEmployeeHireDate" name="hire_date">
+            <label for="updateTaskStatus">Status</label>
+            <select class="form-control" id="updateTaskStatus" name="status">
+              <option value="Not Started">Not Started</option>
+              <option value="In Progress">Started </option>
+              <option value="Completed">Completed</option>
+            </select>
           </div>
-          <button type="submit" class="btn btn-primary">Update Employee</button>
+          <div class="form-group">
+            <label for="updateTaskDueDate">Due Date</label>
+            <input type="date" class="form-control" id="updateTaskDueDate" name="due_date">
+          </div>
+          <button type="submit" class="btn btn-primary">Update Task</button>
         </form>
       </div>
     </div>
@@ -251,20 +257,20 @@
 </div>
 
 
-<!-- Delete Employee Modal -->
-<div class="modal fade" id="deleteEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="deleteEmployeeModalLabel" aria-hidden="true">
+<!-- Delete Task Modal -->
+<div class="modal fade" id="deleteTaskModal" tabindex="-1" role="dialog" aria-labelledby="deleteTaskModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="deleteEmployeeModalLabel">Delete Employee</h5>
+        <h5 class="modal-title" id="deleteTaskModalLabel">Delete Task</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Are you sure you want to delete this employee?</p>
-        <form id="deleteEmployeeForm">
-          <input type="hidden" id="deleteEmployeeId" name="id">
+        <p>Are you sure you want to delete this task?</p>
+        <form id="deleteTaskForm">
+          <input type="hidden" id="deleteTaskId" name="id">
           <button type="submit" class="btn btn-danger">Delete</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </form>
@@ -272,6 +278,8 @@
     </div>
   </div>
 </div>
+
+
 
     </div>
           <!--Row-->
@@ -312,33 +320,13 @@
   </a>
   <script>
  document.addEventListener('DOMContentLoaded', function() {
-  loadEmployees();
+  loadTasks();
+  loadProjects();
 
-  document.getElementById('addEmployeeForm').addEventListener('submit', function(event) {
+  document.getElementById('updateTaskForm').addEventListener('submit', function(event) {
     event.preventDefault();
     const formData = new FormData(this);
-    fetch('http://localhost:3000/api/employees', {
-      method: 'POST',
-      body: JSON.stringify(Object.fromEntries(formData)),
-      headers: { 'Content-Type': 'application/json' }
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.error) {
-        alert('Error: ' + data.error);
-      } else {
-        alert('Employee added successfully!');
-        $('#addEmployeeModal').modal('hide');
-        loadEmployees();
-      }
-    })
-    .catch(error => console.error('Error:', error));
-  });
-
-  document.getElementById('updateEmployeeForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const formData = new FormData(this);
-    fetch(`http://localhost:3000/api/employees/${document.getElementById('updateEmployeeId').value}`, {
+    fetch(`http://localhost:3000/api/tasks/${document.getElementById('updateTaskId').value}`, {
       method: 'PUT',
       body: JSON.stringify(Object.fromEntries(formData)),
       headers: { 'Content-Type': 'application/json' }
@@ -348,18 +336,18 @@
       if (data.error) {
         alert('Error: ' + data.error);
       } else {
-        alert('Employee updated successfully!');
-        $('#updateEmployeeModal').modal('hide');
-        loadEmployees();
+        alert('Task updated successfully!');
+        $('#updateTaskModal').modal('hide');
+        loadTasks();
       }
     })
     .catch(error => console.error('Error:', error));
   });
 
-  document.getElementById('deleteEmployeeForm').addEventListener('submit', function(event) {
+  document.getElementById('deleteTaskForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    const employeeId = document.getElementById('deleteEmployeeId').value;
-    fetch(`http://localhost:3000/api/employees/${employeeId}`, {
+    const taskId = document.getElementById('deleteTaskId').value;
+    fetch(`http://localhost:3000/api/tasks/${taskId}`, {
       method: 'DELETE'
     })
     .then(response => response.json())
@@ -367,32 +355,33 @@
       if (data.error) {
         alert('Error: ' + data.error);
       } else {
-        alert('Employee deleted successfully!');
-        $('#deleteEmployeeModal').modal('hide');
-        loadEmployees();
+        alert('Task deleted successfully!');
+        $('#deleteTaskModal').modal('hide');
+        loadTasks();
       }
     })
     .catch(error => console.error('Error:', error));
   });
 });
 
-function loadEmployees() {
-  fetch('http://localhost:3000/api/employees')
+function loadTasks() {
+  fetch('http://localhost:3000/api/tasks')
     .then(response => response.json())
-    .then(employees => {
-      const tableBody = document.getElementById('employeeTableBody');
+    .then(tasks => {
+      const tableBody = document.getElementById('taskTableBody');
       tableBody.innerHTML = '';
-      employees.forEach(employee => {
+      tasks.forEach(task => {
         tableBody.innerHTML += `
           <tr>
-            <td>${employee.id}</td>
-            <td>${employee.name}</td>
-            <td>${employee.position}</td>
-            <td>${employee.salary}</td>
-            <td>${employee.hire_date}</td>
+            <td>${task.id}</td>
+            <td>${task.project_name}</td>
+            <td>${task.description}</td>
+            <td>${task.assigned_to}</td>
+            <td>${task.status}</td>
+            <td>${task.due_date}</td>
             <td>
-              <button class="btn btn-sm btn-warning" onclick="openUpdateEmployeeModal(${employee.id}, '${employee.name}', '${employee.position}', ${employee.salary}, '${employee.hire_date}')">Update</button>
-              <button class="btn btn-sm btn-danger" onclick="openDeleteEmployeeModal(${employee.id})">Delete</button>
+              <button class="btn btn-sm btn-warning" onclick="openUpdateTaskModal(${task.id}, '${task.project_id}', '${task.description}', '${task.assigned_to}', '${task.status}', '${task.due_date}')">Update</button>
+              <button class="btn btn-sm btn-danger" onclick="openDeleteTaskModal(${task.id})">Delete</button>
             </td>
           </tr>
         `;
@@ -401,22 +390,94 @@ function loadEmployees() {
     .catch(error => console.error('Error:', error));
 }
 
-function openUpdateEmployeeModal(id, name, position, salary, hireDate) {
-  document.getElementById('updateEmployeeId').value = id;
-  document.getElementById('updateEmployeeName').value = name;
-  document.getElementById('updateEmployeePosition').value = position;
-  document.getElementById('updateEmployeeSalary').value = salary;
-  document.getElementById('updateEmployeeHireDate').value = hireDate;
-  $('#updateEmployeeModal').modal('show');
+function loadProjects() {
+  fetch('http://localhost:3000/api/projects')
+    .then(response => response.json())
+    .then(projects => {
+      const addProjectSelect = document.getElementById('taskProject');
+      const updateProjectSelect = document.getElementById('updateTaskProject');
+      addProjectSelect.innerHTML = '';
+      updateProjectSelect.innerHTML = '';
+      projects.forEach(project => {
+        addProjectSelect.innerHTML += `<option value="${project.id}">${project.name}</option>`;
+        updateProjectSelect.innerHTML += `<option value="${project.id}">${project.name}</option>`;
+      });
+    })
+    .catch(error => console.error('Error:', error));
 }
 
-function openDeleteEmployeeModal(id) {
-  document.getElementById('deleteEmployeeId').value = id;
-  $('#deleteEmployeeModal').modal('show');
+function openUpdateTaskModal(id, project_id, description, assigned_to, status, due_date) {
+  document.getElementById('updateTaskId').value = id;
+  document.getElementById('updateTaskProject').value = project_id;
+  document.getElementById('updateTaskDescription').value = description;
+  document.getElementById('updateTaskAssignedTo').value = assigned_to;
+  document.getElementById('updateTaskStatus').value = status;
+  document.getElementById('updateTaskDueDate').value = due_date;
+  $('#updateTaskModal').modal('show');
+}
+
+function openDeleteTaskModal(id) {
+  document.getElementById('deleteTaskId').value = id;
+  $('#deleteTaskModal').modal('show');
 }
 
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Load project and employee options
+    fetchProjects();
+    fetchEmployees();
 
+    // Handle form submission
+    document.getElementById('addTaskForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+
+      fetch('http://localhost:3000/api/tasks', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.error) {
+          alert('Error: ' + data.error);
+        } else {
+          alert('Task added successfully!');
+          $('#addTaskModal').modal('hide');
+          loadTasks(); // Function to refresh the task list if needed
+        }
+      })
+      .catch(error => console.error('Error:', error));
+    });
+
+    function fetchProjects() {
+      fetch('http://localhost:3000/api/projects')
+        .then(response => response.json())
+        .then(projects => {
+          const projectSelect = document.getElementById('project_id');
+          projectSelect.innerHTML = projects.map(project => 
+            `<option value="${project.id}">${project.name}</option>`
+          ).join('');
+        })
+        .catch(error => console.error('Error fetching projects:', error));
+    }
+
+    function fetchEmployees() {
+      fetch('http://localhost:3000/api/employees')
+        .then(response => response.json())
+        .then(employees => {
+          const employeeSelect = document.getElementById('assigned_to');
+          employeeSelect.innerHTML = employees.map(employee => 
+            `<option value="${employee.id}">${employee.name}</option>`
+          ).join('');
+        })
+        .catch(error => console.error('Error fetching employees:', error));
+    }
+  });
+</script>
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>

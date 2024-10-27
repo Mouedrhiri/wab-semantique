@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Civil | Entreprise</title>
+  <link href="img/logo/logo.png" rel="icon">
+  <title>RuangAdmin - Simple Tables</title>
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
@@ -16,7 +17,7 @@
 <body id="page-top">
   <div id="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+   <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
         </div>
@@ -24,7 +25,7 @@
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
-        <a class="nav-link" href="/">
+        <a class="nav-link" href="/dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -127,55 +128,9 @@
                 </form>
               </div>
             </li>
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Notfications
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2024</div>
-                    <span class="font-weight-bold">Bonjour , cher Admin ....</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2024</div>
-                    30,000 MAD a ete ajouter
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2024</div>
-                    Projet a commencer
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
-           
             
+            
+          
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
@@ -188,7 +143,6 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-               
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -199,130 +153,74 @@
           </ul>
         </nav>
         <!-- Topbar -->
-
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Notifications Listes</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+              <li class="breadcrumb-item">Notifications</li>
+              <li class="breadcrumb-item active" aria-current="page">Notifications Listes</li>
             </ol>
           </div>
 
-          <div class="row mb-3">
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Revenues (Mois)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">45,000 MAD</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                        <span>Dernier Mois</span>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-primary"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Earnings (Annual) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Materiel</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">650</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                        <span>Annee 2023-2024</span>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-shopping-cart fa-2x text-success"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- New User Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Utilisateurs Nouveau</div>
-                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">12</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 20.4%</span>
-                        <span>Derniers Mois</span>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-users fa-2x text-info"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Messages et Notifications</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                        <span>Hier</span>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-warning"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="row">
+          <!-- Employee Table -->
+<!-- Materials Table -->
+<div class="col-lg-12 mb-4">
+    <!-- Notifications Table -->
+    <div class="card">
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Notifications</h6>
+             <button class="btn btn-sm btn-danger" onclick="openDeleteAllNotificationsModal()">Delete All</button>
+        </div>
+        <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Message</th>
+                        <th>Type</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="notificationTableBody">
+                    <!-- Dynamic content goes here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-            <!-- Area Chart -->
-            <div class="col-xl-12 col-lg-7">
-              <div class="card mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Rapport du Mois</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                      aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Options</a>
-                      <a class="dropdown-item" href="#">Autre Options</a>
-                      <div class="dropdown-divider"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Pie Chart -->
-           
-            
 
-         
+</div>
+
+<!-- Delete All Notifications Modal -->
+<div class="modal fade" id="deleteAllNotificationsModal" tabindex="-1" role="dialog" aria-labelledby="deleteAllNotificationsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteAllNotificationsModalLabel">Delete All Notifications</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete all notifications?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" onclick="deleteAllNotifications()">Delete All</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    </div>
+          <!--Row-->
 
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
@@ -350,7 +248,6 @@
         <!---Container Fluid-->
       </div>
       <!-- Footer -->
-      
       <!-- Footer -->
     </div>
   </div>
@@ -359,13 +256,132 @@
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    loadNotifications();
+});
+
+function loadNotifications() {
+    fetch('http://localhost:3000/api/notifications')
+        .then(response => response.json())
+        .then(notifications => {
+            const tableBody = document.getElementById('notificationTableBody');
+            tableBody.innerHTML = notifications.map(notification => `
+                <tr>
+                    <td>${notification.id}</td>
+                    <td>${notification.message}</td>
+                    <td>${getNotificationTypeBadge(notification.notification_type)}</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning" onclick="openUpdateNotificationModal(${notification.id}, '${notification.message}', '${notification.notification_type}')">Update</button>
+                        <button class="btn btn-sm btn-danger" onclick="confirmDeleteNotification(${notification.id})">Delete</button>
+                    </td>
+                </tr>
+            `).join('');
+        })
+        .catch(error => console.error('Error fetching notifications:', error));
+}
+
+function getNotificationTypeBadge(type) {
+    let badgeClass;
+    switch (type) {
+        case 'Info':
+            badgeClass = 'badge badge-info';
+            break;
+        case 'Warning':
+            badgeClass = 'badge badge-warning';
+            break;
+        case 'Alert':
+            badgeClass = 'badge badge-danger';
+            break;
+        default:
+            badgeClass = 'badge badge-secondary';
+    }
+    return `<span class="${badgeClass}">${type}</span>`;
+}
+
+document.getElementById('addNotificationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    fetch('http://localhost:3000/api/notifications', {
+        method: 'POST',
+        body: JSON.stringify(Object.fromEntries(formData)),
+        headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert('Error: ' + data.error);
+        } else {
+            alert('Notification added successfully!');
+            $('#addNotificationModal').modal('hide');
+            loadNotifications();
+        }
+    })
+    .catch(error => console.error('Error:', error));
+});
+
+function openUpdateNotificationModal(id, message, type) {
+    document.getElementById('updateNotificationId').value = id;
+    document.getElementById('updateMessage').value = message;
+    document.getElementById('updateNotificationType').value = type;
+    $('#updateNotificationModal').modal('show');
+}
+
+function confirmDeleteNotification(id) {
+    if (confirm('Are you sure you want to delete this notification?')) {
+        fetch(`http://localhost:3000/api/notifications/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert('Error: ' + data.error);
+            } else {
+                alert('Notification deleted successfully!');
+                loadNotifications();
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+}
+function deleteAllNotifications() {
+    fetch('http://localhost:3000/api/notifications', {
+        method: 'DELETE'
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert('Error: ' + data.error);
+        } else {
+            alert('All notifications deleted successfully!');
+            $('#deleteAllNotificationsModal').modal('hide');
+            loadNotifications();
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+// Open the add notification modal
+function openAddNotificationModal() {
+    document.getElementById('addNotificationForm').reset();
+    $('#addNotificationModal').modal('show');
+}
+
+// Open the delete all notifications modal
+function openDeleteAllNotificationsModal() {
+    $('#deleteAllNotificationsModal').modal('show');
+}
+
+// Load notifications when the page loads
+document.addEventListener('DOMContentLoaded', loadNotifications);
+
+</script>
 
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/ruang-admin.min.js"></script>
-  <script src="vendor/chart.js/Chart.min.js"></script>
-  <script src="js/demo/chart-area-demo.js"></script>  
+
 </body>
 
 </html>

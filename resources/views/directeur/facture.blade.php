@@ -24,25 +24,15 @@
         <div class="sidebar-brand-text mx-3">Civil Entreprise</div>
       </a>
       <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/directeur-dashboard">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
         Options
       </div>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
-          aria-expanded="true" aria-controls="collapseBootstrap">
-          <i class="far fa-user"></i>
-          <span>Utilisateurs</span>
-        </a>
-        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Utilisateurs</h6>
-            <a class="collapse-item" href="/client">Clients</a>
-            <a class="collapse-item" href="/employeur">Employees</a>
-            <a class="collapse-item" href="/users">Admin</a>
-          </div>
-        </div>
-      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
           aria-controls="collapseForm">
@@ -52,15 +42,27 @@
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Projets et Demandes</h6>
-            <a class="collapse-item" href="/projet">Projets</a>
-            <a class="collapse-item" href="/demande_de_projet">Demandes des Projets</a>
+            <a class="collapse-item" href="/direction-projet">Projets</a>
+            <a class="collapse-item" href="/direction-demande_de_projet">Demandes des Projets</a>
           </div>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/facture">
+        <a class="nav-link" href="/direction-facture">
           <i class="fas fa-file-invoice"></i>
           <span>Factures</span>
+        </a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/direction-tache">
+         <i class="fa fa-tasks"></i>
+          <span>Tâches</span>
+        </a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/direction-matriel">
+          <i class="fa fa-industry"></i>
+          <span>Materiels</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -71,12 +73,6 @@
         <a class="nav-link" href="/notifications">
           <i class="fa fa-bell"></i>
           <span>Notifications</span>
-        </a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fa fa-back"></i>
-          <span>Deconnexion</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -119,7 +115,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqzimYL8cryUexi41Y0o2AIXlbtmOvOB4bgA&s" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Nasma OUARDI</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">Direction</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -155,10 +151,6 @@
 <div class="col-lg-12 mb-4">
   <!-- Simple Tables -->
   <div class="card">
-    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-      <h6 class="m-0 font-weight-bold text-primary">Factures</h6>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#addInvoiceModal">Add Factures</button>
-    </div>
     <div class="table-responsive">
       <table class="table align-items-center table-flush">
         <thead class="thead-light">
@@ -189,10 +181,6 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addInvoiceModalLabel">Add New Invoice</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
       <div class="modal-body">
         <form id="addInvoiceForm">
@@ -215,10 +203,10 @@
           <div class="form-group">
             <label for="status">Status</label>
             <select class="form-control" id="status" name="status" required>
-              <option value="Pending">Pending</option>
+              <option value="Paid">Paid</option>
+              <option value="Overdue">Overdue</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary">Add Invoice</button>
         </form>
       </div>
     </div>
@@ -258,6 +246,7 @@
           <div class="form-group">
             <label for="update_status">Status</label>
             <select class="form-control" id="update_status" name="status" required>
+              <option value="Pending">Pending</option>
               <option value="Paid">Paid</option>
               <option value="Overdue">Overdue</option>
             </select>

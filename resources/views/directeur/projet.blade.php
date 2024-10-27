@@ -15,34 +15,42 @@
 </head>
 
 <body id="page-top">
+    <style>
+        .badge-warning {
+  background-color: #ffc107; /* Yellow for In Progress */
+}
+
+.badge-success {
+  background-color: #28a745; /* Green for Completed */
+}
+
+.badge-danger {
+  background-color: #dc3545; /* Red for Incompleted */
+}
+
+.badge-secondary {
+  background-color: #6c757d; /* Grey for unknown status */
+}
+
+    </style>
   <div id="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+   <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
         </div>
         <div class="sidebar-brand-text mx-3">Civil Entreprise</div>
       </a>
       <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/directeur-dashboard">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
         Options
       </div>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
-          aria-expanded="true" aria-controls="collapseBootstrap">
-          <i class="far fa-user"></i>
-          <span>Utilisateurs</span>
-        </a>
-        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Utilisateurs</h6>
-            <a class="collapse-item" href="/client">Clients</a>
-            <a class="collapse-item" href="/employeur">Employees</a>
-            <a class="collapse-item" href="/users">Admin</a>
-          </div>
-        </div>
-      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
           aria-controls="collapseForm">
@@ -52,15 +60,27 @@
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Projets et Demandes</h6>
-            <a class="collapse-item" href="/projet">Projets</a>
-            <a class="collapse-item" href="/demande_de_projet">Demandes des Projets</a>
+            <a class="collapse-item" href="/direction-projet">Projets</a>
+            <a class="collapse-item" href="/direction-demande_de_projet">Demandes des Projets</a>
           </div>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/facture">
+        <a class="nav-link" href="/direction-facture">
           <i class="fas fa-file-invoice"></i>
           <span>Factures</span>
+        </a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/direction-tache">
+         <i class="fa fa-tasks"></i>
+          <span>Tâches</span>
+        </a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/directiont-matriel">
+          <i class="fa fa-industry"></i>
+          <span>Materiels</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -71,12 +91,6 @@
         <a class="nav-link" href="/notifications">
           <i class="fa fa-bell"></i>
           <span>Notifications</span>
-        </a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fa fa-back"></i>
-          <span>Deconnexion</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -119,7 +133,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqzimYL8cryUexi41Y0o2AIXlbtmOvOB4bgA&s" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Nasma OUARDI</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">Direction</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -139,39 +153,158 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Client Listes</h1>
+            <h1 class="h3 mb-0 text-gray-800">Projets Listes</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item">Clients</li>
-              <li class="breadcrumb-item active" aria-current="page">Clients Listes</li>
+              <li class="breadcrumb-item">Projets</li>
+              <li class="breadcrumb-item active" aria-current="page">Projets Listes</li>
             </ol>
           </div>
 
           <div class="row">
             <div class="col-lg-12 mb-4">
   <div class="card">
-    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-      <h6 class="m-0 font-weight-bold text-primary">Client List</h6>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#addClientModal">Add Client</button>
-    </div>
     <div class="table-responsive">
       <table class="table align-items-center table-flush">
         <thead class="thead-light">
           <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Address</th>
+            <th>Client Name</th>
+            <th>Project Name</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody id="clientTableBody">
-          <!-- Dynamic content will be inserted here -->
+        <tbody id="projectTableBody">
         </tbody>
       </table>
     </div>
   </div>
+</div>
+
+<!-- Add Project Modal -->
+<div class="modal fade" id="addProjectModal" tabindex="-1" role="dialog" aria-labelledby="addProjectModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addProjectModalLabel">Add New Project</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="addProjectForm">
+          <div class="form-group">
+            <label for="projectClient">Client</label>
+            <select class="form-control" id="projectClient" name="client_id" required>
+              <!-- Client options will be populated here -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="projectName">Project Name</label>
+            <input type="text" class="form-control" id="projectName" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="projectDescription">Description</label>
+            <input type="text" class="form-control" id="projectDescription" name="description">
+          </div>
+          <div class="form-group">
+            <label for="projectStartDate">Start Date</label>
+            <input type="date" class="form-control" id="projectStartDate" name="start_date">
+          </div>
+          <div class="form-group">
+            <label for="projectEndDate">End Date</label>
+            <input type="date" class="form-control" id="projectEndDate" name="end_date">
+          </div>
+         <div class="form-group">
+  <label for="projectStatus">Status</label>
+  <select class="form-control" id="projectStatus" name="status" required>
+    <option value="In Progress">In Progress</option>
+    <option value="Completed">Completed</option>
+    <option value="Incompleted">Incompleted</option>
+  </select>
+</div>
+          <button type="submit" class="btn btn-primary">Add Project</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Update Project Modal -->
+<div class="modal fade" id="updateProjectModal" tabindex="-1" role="dialog" aria-labelledby="updateProjectModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateProjectModalLabel">Update Project</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="updateProjectForm">
+          <input type="hidden" id="updateProjectId" name="id">
+          <div class="form-group">
+            <label for="updateProjectClient">Client</label>
+            <select class="form-control" id="updateProjectClient" name="client_id" required>
+              <!-- Client options will be populated here -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="updateProjectName">Project Name</label>
+            <input type="text" class="form-control" id="updateProjectName" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="updateProjectDescription">Description</label>
+            <input type="text" class="form-control" id="updateProjectDescription" name="description">
+          </div>
+          <div class="form-group">
+            <label for="updateProjectStartDate">Start Date</label>
+            <input type="date" class="form-control" id="updateProjectStartDate" name="start_date">
+          </div>
+          <div class="form-group">
+            <label for="updateProjectEndDate">End Date</label>
+            <input type="date" class="form-control" id="updateProjectEndDate" name="end_date">
+          </div>
+         <div class="form-group">
+  <label for="updateProjectStatus">Status</label>
+  <select class="form-control" id="updateProjectStatus" name="status" required>
+    <option value="In Progress">In Progress</option>
+    <option value="Completed">Completed</option>
+    <option value="Incompleted">Incompleted</option>
+  </select>
+</div>
+          <button type="submit" class="btn btn-primary">Update Project</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Project Modal -->
+<div class="modal fade" id="deleteProjectModal" tabindex="-1" role="dialog" aria-labelledby="deleteProjectModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteProjectModalLabel">Delete Project</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this project?</p>
+        <form id="deleteProjectForm">
+          <input type="hidden" id="deleteProjectId" name="id">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 <!-- Add Client Modal -->
@@ -285,7 +418,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="/" class="btn btn-primary">Logout</a>
+                  <a href="login.html" class="btn btn-primary">Logout</a>
                 </div>
               </div>
             </div>
@@ -295,15 +428,6 @@
         <!---Container Fluid-->
       </div>
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
-              <b><a href="https://indrijunanda.gitlab.io/" target="_blank">indrijunanda</a></b>
-            </span>
-          </div>
-        </div>
-      </footer>
       <!-- Footer -->
     </div>
   </div>
@@ -312,39 +436,72 @@
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
-  <script>
+ <script>
   document.addEventListener('DOMContentLoaded', function() {
-    function loadClients() {
-      fetch('http://localhost:3000/api/clients')
+  function getStatusBadgeClass(status) {
+  switch (status) {
+    case 'In Progress':
+      return 'warning'; // Yellow for "In Progress"
+    case 'Completed':
+      return 'success'; // Green for "Completed"
+    case 'Incompleted':
+      return 'danger'; // Red for "Incompleted"
+    default:
+      return 'secondary'; // Grey for unknown status
+  }
+}
+
+
+    function loadProjects() {
+      fetch('http://localhost:3000/api/projects')
         .then(response => response.json())
-        .then(clients => {
-          const tableBody = document.getElementById('clientTableBody');
+        .then(projects => {
+          const tableBody = document.getElementById('projectTableBody');
           tableBody.innerHTML = '';
-          clients.forEach(client => {
+          projects.forEach(project => {
             const row = `
               <tr>
-                <td>${client.id}</td>
-                <td>${client.name}</td>
-                <td>${client.email}</td>
-                <td>${client.phone}</td>
-                <td>${client.address}</td>
-                <td>
-                  <button class="btn btn-sm btn-warning" onclick="openUpdateClientModal(${client.id}, '${client.name}', '${client.email}', '${client.phone}', '${client.address}')">Update</button>
-                  <button class="btn btn-sm btn-danger" onclick="openDeleteClientModal(${client.id})">Delete</button>
-                </td>
-              </tr>
+  <td>${project.id}</td>
+  <td>${project.client_name}</td>
+  <td>${project.name}</td>
+  <td>${project.description}</td>
+  <td>${project.start_date}</td>
+  <td>${project.end_date}</td>
+  <td>
+    <span class="badge badge-${getStatusBadgeClass(project.status)}">
+      ${project.status}
+    </span>
+  </td>
+  <td>
+    <button class="btn btn-sm btn-warning" onclick="openUpdateProjectModal(${project.id}, '${project.client_id}', '${project.name}', '${project.description}', '${project.start_date}', '${project.end_date}', '${project.status}')">Update</button>
+    <button class="btn btn-sm btn-danger" onclick="openDeleteProjectModal(${project.id})">Delete</button>
+  </td>
+</tr>
+
             `;
             tableBody.innerHTML += row;
           });
         });
     }
 
-    loadClients();
+    function loadClients() {
+      fetch('http://localhost:3000/api/clients')
+        .then(response => response.json())
+        .then(clients => {
+          const clientSelects = [document.getElementById('projectClient'), document.getElementById('updateProjectClient')];
+          clientSelects.forEach(select => {
+            select.innerHTML = '';
+            clients.forEach(client => select.innerHTML += `<option value="${client.id}">${client.name}</option>`);
+          });
+        });
+    }
 
-    document.getElementById('addClientForm').addEventListener('submit', function(event) {
+    loadProjects();
+    loadClients();
+     document.getElementById('addProjectForm').addEventListener('submit', function(event) {
       event.preventDefault();
       const formData = new FormData(this);
-      fetch('http://localhost:3000/api/clients', {
+      fetch('http://localhost:3000/api/projects', {
         method: 'POST',
         body: JSON.stringify(Object.fromEntries(formData)),
         headers: { 'Content-Type': 'application/json' }
@@ -354,17 +511,17 @@
         if (data.error) {
           alert('Error: ' + data.error);
         } else {
-          alert('Client added successfully!');
+          alert('Project added successfully!');
           window.location.reload();
         }
       })
       .catch(error => console.error('Error:', error));
     });
 
-    document.getElementById('updateClientForm').addEventListener('submit', function(event) {
+    document.getElementById('updateProjectForm').addEventListener('submit', function(event) {
       event.preventDefault();
       const formData = new FormData(this);
-      fetch(`http://localhost:3000/api/clients/${document.getElementById('updateClientId').value}`, {
+      fetch(`http://localhost:3000/api/projects/${document.getElementById('updateProjectId').value}`, {
         method: 'PUT',
         body: JSON.stringify(Object.fromEntries(formData)),
         headers: { 'Content-Type': 'application/json' }
@@ -374,17 +531,17 @@
         if (data.error) {
           alert('Error: ' + data.error);
         } else {
-          alert('Client updated successfully!');
+          alert('Project updated successfully!');
           window.location.reload();
         }
       })
       .catch(error => console.error('Error:', error));
     });
 
-    document.getElementById('deleteClientForm').addEventListener('submit', function(event) {
+    document.getElementById('deleteProjectForm').addEventListener('submit', function(event) {
       event.preventDefault();
-      const clientId = document.getElementById('deleteClientId').value;
-      fetch(`http://localhost:3000/api/clients/${clientId}`, {
+      const projectId = document.getElementById('deleteProjectId').value;
+      fetch(`http://localhost:3000/api/projects/${projectId}`, {
         method: 'DELETE'
       })
       .then(response => response.json())
@@ -392,7 +549,7 @@
         if (data.error) {
           alert('Error: ' + data.error);
         } else {
-          alert('Client deleted successfully!');
+          alert('Project deleted successfully!');
           window.location.reload();
         }
       })
@@ -400,21 +557,22 @@
     });
   });
 
-  function openUpdateClientModal(id, name, email, phone, address) {
-    document.getElementById('updateClientId').value = id;
-    document.getElementById('updateClientName').value = name;
-    document.getElementById('updateClientEmail').value = email;
-    document.getElementById('updateClientPhone').value = phone;
-    document.getElementById('updateClientAddress').value = address;
-    $('#updateClientModal').modal('show');
+  function openUpdateProjectModal(id, clientId, name, description, startDate, endDate, status) {
+    document.getElementById('updateProjectId').value = id;
+    document.getElementById('updateProjectClient').value = clientId;
+    document.getElementById('updateProjectName').value = name;
+    document.getElementById('updateProjectDescription').value = description;
+    document.getElementById('updateProjectStartDate').value = startDate;
+    document.getElementById('updateProjectEndDate').value = endDate;
+    document.getElementById('updateProjectStatus').value = status;
+    $('#updateProjectModal').modal('show');
   }
 
-  function openDeleteClientModal(id) {
-    document.getElementById('deleteClientId').value = id;
-    $('#deleteClientModal').modal('show');
+  function openDeleteProjectModal(id) {
+    document.getElementById('deleteProjectId').value = id;
+    $('#deleteProjectModal').modal('show');
   }
 </script>
-
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>

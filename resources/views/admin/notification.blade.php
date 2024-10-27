@@ -24,11 +24,6 @@
         <div class="sidebar-brand-text mx-3">Civil Entreprise</div>
       </a>
       <hr class="sidebar-divider my-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="/dashboard">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
         Options
@@ -66,12 +61,6 @@
         <a class="nav-link" href="/facture">
           <i class="fas fa-file-invoice"></i>
           <span>Factures</span>
-        </a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="/tache">
-         <i class="fa fa-tasks"></i>
-          <span>Tâches</span>
         </a>
       </li>
         <li class="nav-item">

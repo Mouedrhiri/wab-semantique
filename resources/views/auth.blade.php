@@ -385,7 +385,7 @@ signInButton.addEventListener('click', () => {
 
       // Redirect based on user role
       if (result.role === 'admin') {
-        window.location.href = '/projet';
+        window.location.href = '/dashboard';
       } else if (result.role === 'directeur'){
 		window.location.href = '/directeur-dashboard';
 		console.log(result.role)

@@ -196,6 +196,101 @@ app.delete("/api/clients/:id", (req, res) => {
         }
     );
 });
+//==================================== Rendezvous===============================================
+// Create a new appointment
+app.post("/api/appointments", (req, res) => {
+    const { client_id, date, time, status, reason, description } = req.body; // Include client_id
+
+    // Validate required fields
+    if (!client_id || !date || !time || !status || !reason) {
+        return res.status(400).json({ error: "Client ID, date, time, status, and reason are required" });
+    }
+
+    // Insert appointment into the database
+    connection.query(
+        "INSERT INTO appointments (client_id, date, time, status, reason, description) VALUES (?, ?, ?, ?, ?, ?)", // Insert client_id
+        [client_id, date, time, status, reason, description], // Use client_id
+        (err, results) => {
+            if (err) {
+                return res.status(500).json({ error: "Error creating appointment" });
+            }
+            res.status(201).json({
+                message: "Appointment created successfully",
+                appointmentId: results.insertId, // Return the inserted appointment ID
+            });
+        }
+    );
+});
+
+
+// Get all appointments
+app.get("/api/appointments", (req, res) => {
+    connection.query("SELECT * FROM appointments", (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: "Error fetching appointments" });
+        }
+        res.json(results);
+    });
+});
+
+
+// Get a single appointment by ID
+app.get("/api/appointments/:id", (req, res) => {
+    const appointmentId = req.params.id;
+
+    connection.query(
+        "SELECT * FROM appointments WHERE id = ?",
+        [appointmentId],
+        (err, results) => {
+            if (err) {
+                return res.status(500).json({ error: "Error fetching appointment" });
+            }
+            if (results.length === 0) {
+                return res.status(404).json({ error: "Appointment not found" });
+            }
+            res.json(results[0]);
+        }
+    );
+});
+
+// Update an appointment
+app.put("/api/appointments/:id", (req, res) => {
+    const appointmentId = req.params.id;
+    const { clientName, date, time, status, reason, description } = req.body;
+
+    connection.query(
+        "UPDATE appointments SET clientName = ?, date = ?, time = ?, status = ?, reason = ?, description = ? WHERE id = ?",
+        [clientName, date, time, status, reason, description, appointmentId],
+        (err, results) => {
+            if (err) {
+                return res.status(500).json({ error: "Error updating appointment" });
+            }
+            if (results.affectedRows === 0) {
+                return res.status(404).json({ error: "Appointment not found" });
+            }
+            res.json({ message: "Appointment updated successfully" });
+        }
+    );
+});
+
+// Delete an appointment
+app.delete("/api/appointments/:id", (req, res) => {
+    const appointmentId = req.params.id;
+
+    connection.query(
+        "DELETE FROM appointments WHERE id = ?",
+        [appointmentId],
+        (err, results) => {
+            if (err) {
+                return res.status(500).json({ error: "Error deleting appointment" });
+            }
+            if (results.affectedRows === 0) {
+                return res.status(404).json({ error: "Appointment not found" });
+            }
+            res.json({ message: "Appointment deleted successfully" });
+        }
+    );
+});
 //=================================== Projects =================================================
 app.post("/api/projects", (req, res) => {
     const { client_id, name, description, start_date, end_date, status } =

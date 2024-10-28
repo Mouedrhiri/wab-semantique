@@ -23,7 +23,7 @@ Route::get('/auth', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('admin/dashboard');
+    return view('admin/appointement');
 });
 Route::get('/directeur-dashboard', function () {
     return view('directeur/dashboard');
